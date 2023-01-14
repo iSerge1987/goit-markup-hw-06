@@ -182,8 +182,6 @@ address {
 
 /* hero-section */
 .hero {
-  position: relative;
-  overflow: hidden;
   background-color: var(--background-color-secondary);
   padding: 200px 0;
   max-width: 1600px;
@@ -563,9 +561,6 @@ address {
 
 .backdrop {
   position: fixed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   top: 0;
   left: 0;
   width: 100%;
