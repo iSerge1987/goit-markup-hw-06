@@ -1,6 +1,7 @@
 :root {
   --brand-color: #2196F3;
   --color-secondary: #AFB1B8;
+  --background-base-color: #FFFFFF;
   --background-color-primary: #F5F4FA;
   --background-color-secondary: #2F303A;
   --text-color-primary: #212121;
@@ -10,6 +11,7 @@
   --line-height-117: calc(42 / 36);
   --line-height-118: calc(19 / 16);
   --line-height-119: calc(31 / 26);
+  --line-height-125: calc(20 / 16);
   --line-height-136: calc(60 / 44);
   --line-height-156: calc(28 / 18);
   --line-height-162: calc(26 / 16);
@@ -20,7 +22,7 @@
 }
 
 body {
-  background-color: #FFFFFF;
+  background-color: var(--background-base-color);
   color: var(--text-color-primary);
   font-family: Roboto, sans-serif;
 }
@@ -67,7 +69,9 @@ address {
 }
 
 .footer .studio-logo {
+  display: inline-block;
   color: var(--text-color-invert);
+  margin-bottom: 20px;
 }
 
 .web-logo {
@@ -503,7 +507,6 @@ address {
 
 .contacts a {
   display:inline-block;
-  margin-top: 20px;
   color: var(--text-color-invert);
   font-size: 14px;
   line-height: var(--line-height-171);
@@ -515,7 +518,7 @@ address {
   color: rgba(255, 255, 255, 0.6);
 }
 
-.social-title {
+.footer .title {
   margin-top: 12px;
   font-size: 14px;
   line-height: var(--line-height-114);
@@ -554,8 +557,60 @@ address {
 
 .footer .social-icon {
   display: inline-block;
-  flex-basis: 20px;
+  width: 20px;
   height: 20px;
+  fill: currentColor;
+}
+
+.subscribe {
+  display: block;
+  margin-left: auto;
+  width: 570px;
+  height: 86px;
+}
+
+.subscribe-form {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.yourmail input {
+  width: 358px;
+  height: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  background-color: var(--background-color-secondary)
+  /*filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));*/
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 16px;
+  line-height: var(--line-height-125);
+  letter-spacing: 0.03em;
+  padding: 0 0 0 16px;
+}
+
+button[type="submit"] {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 50px;
+  background-color: var(--brand-color);
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  padding: 10px auto;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: var(--line-height-188);
+  letter-spacing: 0.06em;
+  color: var(--text-color-invert);
+}
+
+.footer .subscribe-icon {
+  width: 24px;
+  height: 24px;
   fill: currentColor;
 }
 
@@ -581,19 +636,171 @@ address {
 }
 
 .modal {
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
   min-width: 528px;
   min-height: 581px;
-  background-color: rgba(255, 255, 255, 1);
+  background-color: var(--background-base-color);
   border-radius: 4px;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   opacity: 1;
   transition-property: transform, opacity;
   transition-duration: var(--transition-duration-hover);
   transition-timing-function: var(--transition-timing-hover);
+  padding: 40px;
+}
+
+.modal .title {
+  font-size: 20px;
+  line-height: 1.15;
+  letter-spacing: 0.03em;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.inputs {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.form-item {
+  position: relative;
+}
+
+.form-label {
+  display: block;
+  font-size: 12px;
+  line-height: var(--line-height-117);
+  letter-spacing: 0.01em;
+  color: var(--text-color-secondary);
+}
+
+.form-input {
+  display: block;
+  width: 100%;
+  height: 40px;
+  margin-top: 4px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  padding-left: 42px;
+  transition: border-color var(--transition-duration-hover) var(--transition-timing-hover);
+}
+ 
+.form-icon {
+ position: absolute;
+ left: 12px;
+ bottom: 11px;
+ width: 18px;
+ height: 18px;
+ fill: currentColor;
+}
+
+.form-input:hover,
+.form-input:focus {
+  outline: none;
+  border-color: var(--brand-color);
+}
+
+.form-input:hover ~ .form-icon,
+.form-input:focus ~ .form-icon {
+  fill: var(--brand-color);
+}
+
+.comment .form-input {
+  resize: none;
+  padding: 12px 16px;
+  height: 120px;
+  font-size: 12px;
+  line-height: var(--line-height-117);
+  letter-spacing: 0.01em;
+}
+
+.contract {
+  position: relative;
+  display: block;
+  margin: auto;
+  text-align: center;
+  width: 425px;
+  font-size: 14px;
+  line-height: var(--line-height-171);
+  letter-spacing: 0.03em;
+  color: var(--text-color-secondary);
+  margin-bottom: 30px;
+}
+
+.contract-text:focus {
+  outline: none;
+  text-decoration: underline;
+}
+
+.form-check,
+.form-check:focus {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip:rect(0 0 0 0);
+  overflow: hidden;
+  outline: none;
+}
+
+.check {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 15px;
+  height: 14px;
+  background-color: var(--background-base-color);
+  border: 2px solid var(--text-color-primary);
+  border-radius: 2px;
+}
+
+.check-icon {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 15px;
+  opacity: 0;
+  transition: opacity var(--transition-duration-hover) var(--transition-timing-hover);
+}
+
+.form-check:checked ~ .check-icon {
+  opacity: 1;
+  z-index: 1;
+}
+
+.form-check:checked ~ .check {
+  visibility: hidden;
+}
+
+.modal .send {
+  display: block;
+  margin: auto;
+  transition: background-color var(--transition-duration-hover) var(--transition-timing-hover);
+}
+
+.modal .send:hover {
+  background-color: #188CE8;
+  cursor: pointer;
+} 
+
+.modal .send:focus {
+  background-color: #188CE8;
+  outline: none;
+  cursor: pointer;
 }
 
 .close-btn {
@@ -606,7 +813,7 @@ address {
   padding: 5px;
   justify-content: center;
   align-items: center;
-  background-color: #FFFFFF;
+  background-color: var(--background-base-color);
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
 }
@@ -615,5 +822,14 @@ address {
   display: block;
   width: 18px;
   height: 18px;
-  fill: rgba(0, 0, 0, 1);
+  fill: #000000;
+}
+
+.close-btn:focus {
+  outline: none;
+}
+.close-btn:hover .close-btn-icon,
+.close-btn:focus .close-btn-icon {
+  fill: var(--brand-color);
+  cursor: pointer;
 }

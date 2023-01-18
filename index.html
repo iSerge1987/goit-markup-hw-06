@@ -352,7 +352,7 @@
           </address>
         </div>
         <div class="social">
-          <h3 class="social-title">Приєднуйтесь</h3>
+          <h3 class="title">Приєднуйтесь</h3>
           <ul class="social-list">
             <li>
               <a class="social-link" href="">
@@ -384,6 +384,20 @@
             </li>
           </ul>
         </div>
+        <div class="subscribe">
+          <h3 class="title">Підпишіться на розсилку</h3>
+          <form class="subscribe-form" autocomplete=off >
+            <label class="yourmail">
+              <input type="email" name="yourmail" placeholder="E-mail" />
+            </label>
+            <button type="submit">
+              <p>Підписатися</p>
+              <svg class="subscribe-icon">
+                <use href="./images/icons.svg#icon-send"></use>
+              </svg>
+            </button>
+          </form>
+        </div>
       </div>
     </footer>
 
@@ -393,6 +407,46 @@
           <svg class="close-btn-icon">
             <use href="./images/icons.svg#icon-close"></use>
           </svg>
+        </button>
+        <h3 class="title">Залиште свої дані, ми вам передзвонимо</h3>
+        <div class="inputs">
+          <div class="form-item person">
+            <label class="form-label person" for="person">Ім'я</label>
+            <input class="form-input person" type="text" name="person" id="person" placeholder=" " />
+            <svg class="form-icon person">
+              <use href="./images/icons.svg#icon-person"></use>
+            </svg>          </div>
+          <div class="form-item tel">
+            <label class="form-label tel" for="tel">Телефон</label>
+            <input class="form-input tel" type="tel" name="tel" id="tel" placeholder=" " />
+            <svg class="form-icon tel">
+              <use href="./images/icons.svg#icon-phone"></use>
+            </svg>
+          </div>
+          <div class="form-item mail">
+            <label class="form-label mail" for="mail">Пошта</label>
+            <input class="form-input mail" type="email" name="mail" id="mail" placeholder=" " />
+            <svg class="form-icon mail">
+              <use href="./images/icons.svg#icon-mail"></use>
+            </svg>
+          </div>
+          <div class="form-item comment">
+            <label class="form-label comment" for="comment">Коментар</label>
+            <textarea class="form-input comment" type="textarea" name="comment" id="comment" placeholder="Введіть текст"></textarea>
+          </div>
+        </div>
+        <div class="contract">
+          <label class="label-contract" for="contract">
+            <p>Погоджуюся з розсилкою та приймаю <a href="" class="contract-text">Умови договору</a></p>
+          </label>
+          <input class="form-check" type="checkbox" name="contract" id="contract" value="contract" />
+          <svg class="check-icon">
+            <use href="./images/icons.svg#icon-check"></use>
+          </svg>
+          <div class="check"></div>
+        </div>
+        <button type="submit" class="send">
+          <p>Відправити</p>
         </button>
       </div>
     </div>
